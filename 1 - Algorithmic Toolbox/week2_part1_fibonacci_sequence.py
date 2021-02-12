@@ -12,5 +12,6 @@ def calc_fib(n):
 
         return new_fib
 
-n = int(input())
-print(calc_fib(n))
+if __name__ == '__main__':
+    n = int(input())
+    print(calc_fib(n))
