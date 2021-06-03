@@ -1,8 +1,7 @@
-# Algorithmic Toolbox Week 4
+## Algorithmic Toolbox Week 4
 
-| Description | Solution |
-| -------| -----| 
-| Binary search. | [:star:](https://github.com/IAjimi/) | 
-| Majority element. | [:star:](https://github.com/IAjimi/) | 
-| Inversions. | [:star:](https://github.com/IAjimi/) | 
-| Lottery. | [:star:](https://github.com/IAjimi/) |
+* [Binary search](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/1%20-%20Algorithmic%20Toolbox/Week%204%20-%20Divide-and-Conquer/week4_part1_binary_search.py)
+* [ Majority element](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/1%20-%20Algorithmic%20Toolbox/Week%204%20-%20Divide-and-Conquer/week4_part2_majority_element.py)
+* [Lottery](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/1%20-%20Algorithmic%20Toolbox/Week%204%20-%20Divide-and-Conquer/week4_part5_lottery.py) 
+* [Inversions](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/1%20-%20Algorithmic%20Toolbox/Week%204%20-%20Divide-and-Conquer/week4_part4_inversions.py)
+
