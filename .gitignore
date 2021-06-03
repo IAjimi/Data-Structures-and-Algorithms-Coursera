@@ -1,2 +1,4 @@
 *.pdf
 *_failed.py
+*.txt
+*.ipynb
