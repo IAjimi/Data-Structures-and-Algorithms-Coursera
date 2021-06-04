@@ -11,9 +11,10 @@ This repository contains Python solutions to the homeworks for the Data Structur
 * [Job Queue](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/2%20-%20Data%20Structures/Week%203%20-%20Priority%20Queues%20and%20Disjoint%20Sets/job_queue.py) 
 
 **Week 3 - Hash Tables**
+* [Phone Book](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/2%20-%20Data%20Structures/Week%203%20-%20Hash%20Tables/phone_book.py) 
+* [Hashing with Chains](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/2%20-%20Data%20Structures/Week%203%20-%20Hash%20Tables/hashing_with_chains.py)
+
+**Week 4 - Binary Search Trees 1**
 
 
-**Week 5 - Binary Search Trees 1**
-
-
-**Week 6 - Binary Search Trees 2**
+**Week 5 - Binary Search Trees 2**
