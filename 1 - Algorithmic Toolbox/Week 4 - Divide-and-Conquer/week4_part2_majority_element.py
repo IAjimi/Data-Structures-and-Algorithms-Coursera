@@ -1,19 +1,4 @@
 import sys
-from math import floor
-
-# def get_majority_element(n, a):
-#     a.sort()
-
-#     i = 0
-#     search_count = floor(1 + n / 2)
-
-#     while i + search_count < n:
-#         if a[i] == a[i + search_count - 1]:
-#             return 1
-#         i += 1
-#     return 0
-
-from math import ceil
 
 def get_majority_element(n, a):
     a.sort()

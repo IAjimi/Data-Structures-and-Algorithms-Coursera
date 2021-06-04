@@ -25,14 +25,6 @@ def main(text):
         print(n)
 
 
-def main(text):
-    mismatch, n = checkBalance(text)
-    if mismatch == True:
-        print("Success")
-    else:
-        print(n)
-
-
 if __name__ == "__main__":
     text = input()
     main(text)
