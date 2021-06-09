@@ -13,5 +13,4 @@ This repository contains Python solutions to the homeworks for the Data Structur
 * [Week 1 - Basic Data Structures](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/2%20-%20Data%20Structures/Week%201%20-%20Basic%20Data%20Structures) 
 * [Week 2 - Priority Queues and Disjoint Sets](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/2%20-%20Data%20Structures/Week%203%20-%20Priority%20Queues%20and%20Disjoint%20Sets) 
 * [Week 3 - Hash Tables](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/2%20-%20Data%20Structures/Week%203%20-%20Hash%20Tables)
-* Week 4 - Binary Search Trees 1
-* Week 5 - Binary Search Trees 2
+* [Week 4 - Binary Search Trees](https://github.com/IAjimi/)
