@@ -16,3 +16,8 @@ This repository contains Python solutions to the homeworks for the Data Structur
 * [Week 4 - Binary Search Trees](https://github.com/IAjimi/)
 
 **3 - Algorithms on Graphs**
+* [Week 1 - Graph Decomposition]()
+* [Week 2 - Directed Graphs]()
+* [Week 3 - Paths 1]()
+* [Week 4 - Paths 2]()
+* [Week 5 - Minimum Spanning Trees]()

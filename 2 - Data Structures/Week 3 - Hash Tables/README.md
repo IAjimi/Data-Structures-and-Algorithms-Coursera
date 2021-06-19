@@ -27,7 +27,7 @@ One solution is to use **chaining**:
 * create an array of size m
 * store chains in each cell of the array
 
-Essentially, we store different elements with the same hash value into an array located at hash_table[__hash(P)].
+Essentially, we store different elements with the same hash value into an array located at `hash_table[__hash(P)]`.
 
 Instead of requiring our hash table to have different values for different objects,
 we can look for a hash table that distribute keys well into different cells.
@@ -49,11 +49,11 @@ If the load factor is between 0.5 and 1, then we only need `O(n)` memory to stor
 
 If n is unknown in advance, we can adjust the size of the hash table:
 * resize the hash table when a becomes too large
-* choose new hash function and *rehash* all objects
+* choose new hash function and rehash all objects
 
 Rehash should be called after *each* operation with the hash table.
 
-Single rehashing takes O(n) but amortized running time is O(1) as rehashing is rare (time between rehashes 2x every time).
+Rehashing is an O(n) operation but its amortized running time is O(1) as rehashing is rare (time between rehashes 2x every time).
 
 #### Hashing Integers
 Take numbers up to length 7 (0 to 9,999,999).
