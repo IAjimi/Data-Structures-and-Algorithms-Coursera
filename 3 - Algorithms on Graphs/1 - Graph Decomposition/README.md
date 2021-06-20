@@ -31,7 +31,7 @@ Different operations are faster in different representations.
 	* adj_list: `O(deg)`, proportion to degree (number of neighbors) of vertex
 * List edges:
 	* adj_matrix: `O(len(vertex)**2)`, scan through every entry of the matrix
-	* edge_list: `O(len(edges))`
+	* edge_list: `O(len(edges))` 
 	* adj_list: `O(len(edges))`
 * List neighbors:
 	* adj_matrix: O(len(vertex)), scan through row of matrix and find all 1s
