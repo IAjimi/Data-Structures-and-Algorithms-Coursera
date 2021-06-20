@@ -1,4 +1,4 @@
-## Algorithms Week 5
+## Algorithms on Graphs Week 5
 ### Minimum Spanning Trees
 
 * [Building roads]()

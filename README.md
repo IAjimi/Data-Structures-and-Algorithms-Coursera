@@ -16,8 +16,8 @@ This repository contains Python solutions to the homeworks for the Data Structur
 * [Week 4 - Binary Search Trees](https://github.com/IAjimi/)
 
 **3 - Algorithms on Graphs**
-* [Week 1 - Graph Decomposition]()
-* [Week 2 - Directed Graphs]()
-* [Week 3 - Paths 1]()
-* [Week 4 - Paths 2]()
-* [Week 5 - Minimum Spanning Trees]()
+* [Week 1 - Graph Decomposition](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/3%20-%20Algorithms%20on%20Graphs/1%20-%20Graph%20Decomposition)
+* [Week 2 - Directed Graphs](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/3%20-%20Algorithms%20on%20Graphs/2%20-%20Directed%20Graphs)
+* [Week 3 - Paths 1](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/3%20-%20Algorithms%20on%20Graphs/3%20-%20Paths)
+* [Week 4 - Paths 2](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/3%20-%20Algorithms%20on%20Graphs/4%20-%20Paths)
+* [Week 5 - Minimum Spanning Trees](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/3%20-%20Algorithms%20on%20Graphs/5%20-%20Minimum%20Spanning%20Trees)

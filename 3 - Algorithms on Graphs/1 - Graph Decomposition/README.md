@@ -1,4 +1,4 @@
-## Algorithms Week 1
+## Algorithms on Graphs Week 1
 ### Graph Decomposition 1
 
 * [Find an exit from a maze]() (Is node reachable?)
