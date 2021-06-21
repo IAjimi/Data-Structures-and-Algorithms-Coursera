@@ -1,8 +1,8 @@
 ## Algorithms on Graphs Week 1
 ### Graph Decomposition 1
 
-* [Find an exit from a maze]() (Is node reachable?)
-* [Find the number of exists needed for a maze]() (Find the number of graph components)
+* [Find an exit from a maze](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/1%20-%20Graph%20Decomposition/finding_an_exit_from_a_maze.py) (Is node reachable?)
+* [Find the number of exists needed for a maze](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/1%20-%20Graph%20Decomposition/adding_exits_to_a_maze.py) (Find the number of graph components)
 
 ---
 
