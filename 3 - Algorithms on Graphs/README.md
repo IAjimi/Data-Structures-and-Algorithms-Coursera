@@ -12,7 +12,7 @@ This repository contains Python solutions to the homeworks for the Algorithms on
 
 **Week 3 - Paths in Graphs 1**
 * [Computing the Minimum Number of Flight Segments]() (Shortest Path)
-* Bipartite graphs() (didn't pass Coursera but passed Leetcode)
+* [Bipartite graphs]() (didn't pass Coursera but passed Leetcode)
 
 **Week 4 - Paths in Graphs 2**
 * [Computing the Minimum Cost of a Flight]() (Finding shortest path in weighted graph)
@@ -22,3 +22,7 @@ This repository contains Python solutions to the homeworks for the Algorithms on
 **Week 5 - Minimum Spanning Trees**
 * [Building roads]()
 * [Clustering]()
+
+**Week 6 - Advanced Shortest Path**
+* [Friend Suggestion]() (Bidirectional Dijkstra)
+* [Distance with Coordinates]() (A* Dijkstra)

@@ -21,3 +21,4 @@ This repository contains Python solutions to the homeworks for the Data Structur
 * [Week 3 - Paths 1](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/3%20-%20Algorithms%20on%20Graphs/3%20-%20Paths)
 * [Week 4 - Paths 2](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/3%20-%20Algorithms%20on%20Graphs/4%20-%20Paths)
 * [Week 5 - Minimum Spanning Trees](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/3%20-%20Algorithms%20on%20Graphs/5%20-%20Minimum%20Spanning%20Trees)
+* [Week 6 - Advanced Shortest Path]()

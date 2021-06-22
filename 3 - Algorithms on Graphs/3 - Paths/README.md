@@ -2,6 +2,7 @@
 ### Paths 1
 
 * [Computing the Minimum Number of Flight Segments]() (Shortest Path)
+* [Bipartite graphs]() (didn't pass Coursera but passed Leetcode)
 
 ---
 
