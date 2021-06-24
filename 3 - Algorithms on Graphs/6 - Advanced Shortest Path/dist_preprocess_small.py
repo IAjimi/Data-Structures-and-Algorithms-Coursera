@@ -36,6 +36,13 @@ class DistPreprocessSmall:
         self.contraction_order = {v: ix for ix, v in enumerate(contracted_nodes)}
         self.add_shortcuts(all_shortcuts)
 
+    def clear(self):
+        """Reinitialize the data structures for the next query after the previous query."""
+        self.distance = [[self.inf] * n, [self.inf] * n]
+        self.visited = [[False] * n, [False] * n]
+        self.workset = set()
+        self.q = [queue.PriorityQueue(), queue.PriorityQueue()]
+
     def find_shortcuts(self, v):
         """
         Find all the shortcuts going through v.
@@ -51,30 +58,11 @@ class DistPreprocessSmall:
         if not incoming_nodes or not outgoing_nodes:
             return shortcuts
 
-        # all_v_dist = {}
-        # for ix in range(len(incoming_nodes)):
-        #     for jx in range(len(outgoing_nodes)):
-        #         node_from, node_to = incoming_nodes[ix], outgoing_nodes[jx]
-        #         all_v_dist[(node_from, node_to)] = (
-        #             self.cost[0][v][jx] + self.cost[1][v][ix]
-        #         )
-        #
-        # max_dist = max(all_v_dist.values())
-        #
-        # # Find Shortest Paths in subgraph EXCLUDING node v w/ Dijkstra
-        # for incoming_node in incoming_nodes:
-        #     self.Dijkstra(incoming_node, set(outgoing_nodes), max_dist, v)
-        #
-        #     for outgoing_node in outgoing_nodes:
-        #         this_v_dist = all_v_dist[(incoming_node, outgoing_node)]
-        #         if this_v_dist <= self.distance[0][outgoing_node]:
-        #             shortcuts.append((incoming_node, outgoing_node, this_v_dist))
-
         for ix in range(len(incoming_nodes)):
             incoming_node = incoming_nodes[ix]
 
             all_v_dist = [self.cost[0][v][jx] + self.cost[1][v][ix] for jx in range(len(outgoing_nodes))]
-            max_dist = max(all_v_dist)
+            max_dist = max(all_v_dist)  # max v dist - Dijkstra will terminate after reaching max_dist
 
             self.Dijkstra(incoming_node, set(outgoing_nodes), max_dist, v)
 
@@ -176,7 +164,7 @@ class DistPreprocessSmall:
 
         # Go through queue
         all_shortcuts = []
-        contracted_nodes = []  # contraction order
+        contracted_nodes = []  # appends in order so also stores contraction order for now
 
         while preprocessing_queue.qsize() > 0:
             # Retrieve node with min imp
@@ -231,13 +219,6 @@ class DistPreprocessSmall:
         )
         return importance
 
-    def clear(self):
-        """Reinitialize the data structures for the next query after the previous query."""
-        self.distance = [[self.inf] * n, [self.inf] * n]
-        self.visited = [[False] * n, [False] * n]
-        self.workset = set()
-        self.q = [queue.PriorityQueue(), queue.PriorityQueue()]
-
     def visit(self, side, _queue, node):
         """Add valid nodes to the queue.
 
@@ -256,7 +237,7 @@ class DistPreprocessSmall:
             if (
                 new_dist < self.distance[side][new_node]
                 and not self.visited[side][new_node]
-                and self.contraction_order[new_node] >= self.contraction_order[node]
+                and self.contraction_order[new_node] >= self.contraction_order[node]  # in preprocessing, all nodes have order 0
             ):
                 self.distance[side][new_node] = new_dist
                 _queue.put((new_dist, new_node))
@@ -277,9 +258,11 @@ class DistPreprocessSmall:
         self.distance[0][start] = dist
         _queue.put((dist, start))
 
+        # Heuristic: max number of moves thru Dijkstra before ending search
         turns = 0
         k = len(end) * 3
 
+        # Optional: removing node from search
         if blacklisted_node:
             self.visited[0][
                 blacklisted_node
@@ -298,6 +281,7 @@ class DistPreprocessSmall:
     def query(self, start, end):
         """
         Run query. Returns shortest path between the two nodes.
+        Complete Bidirection Dijkstra search.
         """
         self.clear()
         self.q[0].put((0, start))
