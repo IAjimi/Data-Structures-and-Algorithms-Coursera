@@ -260,7 +260,7 @@ class DistPreprocessSmall:
 
         # Heuristic: max number of moves thru Dijkstra before ending search
         turns = 0
-        k = len(end) * 3
+        k = len(end)
 
         # Optional: removing node from search
         if blacklisted_node:
