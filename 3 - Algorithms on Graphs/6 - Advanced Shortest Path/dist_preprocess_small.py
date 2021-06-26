@@ -1,7 +1,25 @@
-'''Valid answers but too slow for final case. Being optimized.'''
+'''Valid answers but processing too slow for final case (1 ≤ 𝑛 ≤ 11 000, 1 ≤ 𝑚 ≤ 25 000, max time = 50s).
+
+Currently +- 0.41s to process graph with n = 100, m = 1000.
+Full script is +-2.6s for n = 100, m = 1000, q = 1000.
+
+The preprocessing is as follows:
+    1. Get an estimate of importance for every node, based on edge difference.
+    Place nodes in queue with importance = edge_difference.
+    2. Extract the least important node.
+    3. Recompute its importance.
+    4. Compare with top of priority queue: if lower, contract the node.
+    Else return to priority queue with updated priority.
+
+Where importance is calculated based on the node's edge difference + the number of contracted neighbors +
+the node's level.
+
+I then run a Bidirectional search and find the shortest distance by summing the forward and backward paths
+of every node visited by both ends of the search.
+'''
 
 import sys
-import queue
+import heapq
 from copy import deepcopy
 
 # Maximum allowed edge length
@@ -18,11 +36,11 @@ class DistPreprocessSmall:
             [self.inf] * n,
             [self.inf] * n,
         ]  # initialize distances for forward and backward searches
-        self.visited = [[False] * n]
+        self.visited = [[False] * n, [False] * n]
         self.workset = set()  # all the nodes visited by forward or backward search
         self.q = [
-            queue.PriorityQueue(),
-            queue.PriorityQueue(),
+            [],
+            [],
         ]  # forward and backward priority queues
         self.level = [0] * n  # Levels of nodes for node ordering heuristics
         self.contraction_order = {
@@ -41,7 +59,7 @@ class DistPreprocessSmall:
         self.distance = [[self.inf] * n, [self.inf] * n]
         self.visited = [[False] * n, [False] * n]
         self.workset = set()
-        self.q = [queue.PriorityQueue(), queue.PriorityQueue()]
+        self.q = [[], []]
 
     def find_shortcuts(self, v):
         """
@@ -77,7 +95,7 @@ class DistPreprocessSmall:
 
     def add_shortcuts(self, shortcuts):
         """
-        Add shorcuts to adjacency list.
+        Add shortcuts to adjacency list.
 
         :input shortcuts: list[tuple], shortest paths going through some node
         """
@@ -97,7 +115,7 @@ class DistPreprocessSmall:
         node_level = self.level[node]
         neighbors = self.adj[0][node] + self.adj[1][node]
         self.level = [
-            max(level, node_level + 1) if ix in neighbors else 0
+            max(level, node_level + 1) if ix in neighbors else level
             for ix, level in enumerate(self.level)
         ]
 
@@ -152,33 +170,32 @@ class DistPreprocessSmall:
 
         Return contracted nodes, in order, and shortcuts.
         """
-        # Start by getting edge difference of every node
-        preprocessing_queue = queue.PriorityQueue()
+        # Start by getting edge difference of every node (w/o shortcuts)
+        preprocessing_queue = []
 
         for node in range(self.n):
-            shortcuts = self.find_shortcuts(node)
             estimated_importance = (
-                len(shortcuts) - len(self.adj[0][node]) - len(self.adj[1][node])
+                0 - len(self.adj[0][node]) - len(self.adj[1][node])
             )
-            preprocessing_queue.put((estimated_importance, node))
+            heapq.heappush(preprocessing_queue, (estimated_importance, node))
 
         # Go through queue
         all_shortcuts = []
         contracted_nodes = []  # appends in order so also stores contraction order for now
 
-        while preprocessing_queue.qsize() > 0:
+        while preprocessing_queue:
             # Retrieve node with min imp
-            _, node = preprocessing_queue.get()
+            _, node = heapq.heappop(preprocessing_queue)
 
             # If there still is a node in the queue, recalculate the importance of the node
             # and compare to top of queue
-            if preprocessing_queue.qsize() >= 1:
+            if len(preprocessing_queue) >= 1:
                 shortcuts = self.find_shortcuts(node)
                 recalculated_imps = self.calculate_importance(
                     node, contracted_nodes, shortcuts
                 )
-                second_imp, second_node = preprocessing_queue.get()
-                preprocessing_queue.put((second_imp, second_node))
+                second_imp, second_node = heapq.heappop(preprocessing_queue)
+                heapq.heappush(preprocessing_queue, (second_imp, second_node))
             else:
                 second_imp = self.inf
 
@@ -189,7 +206,7 @@ class DistPreprocessSmall:
                 self.contract_node(node, shortcuts)
                 all_shortcuts.extend(shortcuts)
             else:
-                preprocessing_queue.put((recalculated_imps, node))
+                heapq.heappush(preprocessing_queue, (recalculated_imps, node))
 
         return contracted_nodes, all_shortcuts
 
@@ -210,12 +227,11 @@ class DistPreprocessSmall:
             len(shortcuts) - len(self.adj[0][node]) - len(self.adj[1][node])
         )
         contracted_neighbors = sum([1 for n in neighbors if n in contracted_nodes])
-        shortcut_cover = 0
         node_level = self.level[node]
 
         # Compute importance
         importance = (
-            edge_difference + contracted_neighbors + shortcut_cover + node_level
+            edge_difference + contracted_neighbors + node_level
         )
         return importance
 
@@ -240,7 +256,7 @@ class DistPreprocessSmall:
                 and self.contraction_order[new_node] >= self.contraction_order[node]  # in preprocessing, all nodes have order 0
             ):
                 self.distance[side][new_node] = new_dist
-                _queue.put((new_dist, new_node))
+                heapq.heappush(_queue, (new_dist, new_node))
 
         return _queue
 
@@ -254,13 +270,13 @@ class DistPreprocessSmall:
         """
         self.clear()
         dist = 0
-        _queue = queue.PriorityQueue()
+        _queue = []
         self.distance[0][start] = dist
-        _queue.put((dist, start))
+        heapq.heappush(_queue, (dist, start))
 
         # Heuristic: max number of moves thru Dijkstra before ending search
         turns = 0
-        k = len(end)
+        k = len(end)  # lazy way of limiting hops
 
         # Optional: removing node from search
         if blacklisted_node:
@@ -269,12 +285,12 @@ class DistPreprocessSmall:
             ] = True  # this will stop self.visit from considering this node
 
         while (
-            _queue.qsize() > 0
+            _queue
             and end.difference(self.workset) != set()
             and dist < max_dist
             and turns < k
         ):
-            dist, node = _queue.get()
+            dist, node = heapq.heappop(_queue)
             _queue = self.visit(0, _queue, node)
             turns += 1
 
@@ -284,19 +300,19 @@ class DistPreprocessSmall:
         Complete Bidirection Dijkstra search.
         """
         self.clear()
-        self.q[0].put((0, start))
-        self.q[1].put((0, end))
+        heapq.heappush(self.q[0], (0, start))
+        heapq.heappush(self.q[1], (0, end))
         self.distance[0][start] = 0
         self.distance[1][end] = 0
 
-        while self.q[0].qsize() > 0 or self.q[1].qsize() > 0:
-            if self.q[0].qsize() > 0:
-                _, forward_node = self.q[0].get()
+        while self.q[0] or self.q[1]:
+            if self.q[0]:
+                _, forward_node = heapq.heappop(self.q[0])
                 if not self.visited[0][forward_node]:
                     self.visit(0, self.q[0], forward_node)
 
-            if self.q[1].qsize() > 0:
-                _, backward_node = self.q[1].get()
+            if self.q[1]:
+                _, backward_node = heapq.heappop(self.q[1])
                 if not self.visited[1][backward_node]:
                     self.visit(1, self.q[1], backward_node)
 
@@ -306,7 +322,9 @@ class DistPreprocessSmall:
         """Find shortest path."""
         distance = self.inf
 
-        for node in self.workset:
+        visited_twice = [ix for ix in range(self.n) if self.visited[0][ix] and self.visited[1][ix]]
+
+        for node in visited_twice:
             node_dist = self.distance[0][node] + self.distance[1][node]
             if node_dist < distance:
                 distance = node_dist
