@@ -1,9 +1,9 @@
 ## Algorithms on Graphs Week 6
 ### Advanced Shortest Path
 
-* [Friend Suggestion]() (Bidirectional Dijkstra)
+* [Friend Suggestion](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/6%20-%20Advanced%20Shortest%20Path/friend_suggestion.py) (Bidirectional Dijkstra)
 * [Distance with Coordinates]() (A* Dijkstra)
-* [Compute Distance with Processing]() (Bidirectional Dijkstra with preprocessing)
+* [Compute Distance with Processing](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/6%20-%20Advanced%20Shortest%20Path/dist_preprocess_small.py) (Bidirectional Dijkstra with preprocessing)
 
 > Note: although the Bidirectional Dijkstra with preprocessing script returns the right results, its 
 > preprocessing is too slow for the last test of the Compute Distance with Preprocessing (small) problem. The Bidirectional
