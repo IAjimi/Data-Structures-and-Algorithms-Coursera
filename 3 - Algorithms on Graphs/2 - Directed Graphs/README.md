@@ -1,8 +1,9 @@
 ## Algorithms on Graphs Week 2
 ### Graph Decomposition 2
 
-* [Checking consistency of CS curriculum]() (Is graph cyclical?)
-* [Determining an order of courses]() (Find an order in which the whole graph can be visited linearly)
+* [Checking consistency of CS curriculum](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/2%20-%20Directed%20Graphs/cyclical_graph.py) (Is graph cyclical?)
+* [Determining an order of courses](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/2%20-%20Directed%20Graphs/linear_order_graph.py) (Find an order in which the whole graph can be visited linearly)
+* Strongly connected components
 
 ---
 

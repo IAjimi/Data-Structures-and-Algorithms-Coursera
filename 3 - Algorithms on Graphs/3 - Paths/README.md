@@ -1,8 +1,8 @@
 ## Algorithms on Graphs Week 3
 ### Paths 1
 
-* [Computing the Minimum Number of Flight Segments]() (Shortest Path)
-* [Bipartite graphs]() (didn't pass Coursera but passed Leetcode)
+* [Computing the Minimum Number of Flight Segments](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/3%20-%20Paths/minimum_distance.py) (Shortest Path)
+* [Bipartite graphs](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/3%20-%20Paths/bipartite_graph.py) (didn't pass Coursera but passed Leetcode)
 
 ---
 

@@ -2,7 +2,7 @@
 ### Advanced Shortest Path
 
 * [Friend Suggestion](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/6%20-%20Advanced%20Shortest%20Path/friend_suggestion.py) (Bidirectional Dijkstra)
-* [Distance with Coordinates]() (A* Dijkstra)
+* [Distance with Coordinates](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/6%20-%20Advanced%20Shortest%20Path/dist_with_coords.py) (A* Dijkstra)
 * [Compute Distance with Processing](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/6%20-%20Advanced%20Shortest%20Path/dist_preprocess_small.py) (Bidirectional Dijkstra with preprocessing)
 
 > Note: although the Bidirectional Dijkstra with preprocessing script returns the right results, its 
@@ -56,8 +56,8 @@ belonging to `E^R` and vice-versa.
 Let v be the first vertex processed both in G and G^R. Does it follow
 that there is a shortest path from s to t going through v? No!
 
-Lemma: let dist[u] be the distance estimate in the forward estimate
-in the forward Dijkstra from s in G and dist^r[u] - the same as the
+Lemma: let `dist[u]` be the distance estimate in the forward estimate
+in the forward Dijkstra from s in G and `dist^r[u]` - the same as the
 distance in the backward Dijkstra from t in G^R.
 
 After some node v is processed both in G and G^R, some shortest path
@@ -130,7 +130,7 @@ def ShortestPath(start, dist, prev, proc, end):
 	return (distance, path)
 ```
 
-#### A-Start Algorithm
+#### A* Algorithm
 Take any **potential function** `p(v)` mapping vertices to real numbers.
 It defines new edge weights `l_p(u, v) = l(u, v) - p(u) + p(v)`.
 Replacing l by l_p does not change the shortest paths.

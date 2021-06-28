@@ -25,5 +25,5 @@ This repository contains Python solutions to the homeworks for the Algorithms on
 
 **Week 6 - Advanced Shortest Path**
 * [Friend Suggestion](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/6%20-%20Advanced%20Shortest%20Path/friend_suggestion.py) (Bidirectional Dijkstra)
-* [Distance with Coordinates]() (A* Dijkstra)
+* [Distance with Coordinates](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/6%20-%20Advanced%20Shortest%20Path/dist_with_coords.py) (A* Dijkstra)
 * [Compute Distance with Processing](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/6%20-%20Advanced%20Shortest%20Path/dist_preprocess_small.py) (Bidirectional Dijkstra with preprocessing)
