@@ -1,8 +1,9 @@
 ## Algorithms on Graphs Week 4
 ### Paths 2 (Weighted Graphs)
 
-* [Computing the Minimum Cost of a Flight]() (Finding shortest path in weighted graph)
-* [Detecting Anomalies in Currency Exchange Rates]() (Detecting negative weight cycles)
+* [Computing the Minimum Cost of a Flight](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/4%20-%20Paths/min_flight_cost.py) (Finding shortest path in weighted graph)
+* [Detecting Anomalies in Currency Exchange Rates](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/4%20-%20Paths/anomaly_currency_rate_exchange.py) (Detecting negative weight cycles)
+* Shortest path (Exchanging money optimally)
 
 ---
 

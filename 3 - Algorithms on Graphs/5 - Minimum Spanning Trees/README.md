@@ -1,8 +1,8 @@
 ## Algorithms on Graphs Week 5
 ### Minimum Spanning Trees
 
-* [Building roads]()
-* [Clustering]()
+* [Building roads](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/5%20-%20Minimum%20Spanning%20Trees/building_roads.py) (Prim's Algorithm)
+* [Clustering](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/blob/master/3%20-%20Algorithms%20on%20Graphs/5%20-%20Minimum%20Spanning%20Trees/clustering.py) (Kruskal's Algorithm)
 
 ---
 
