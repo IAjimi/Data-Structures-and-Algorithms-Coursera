@@ -22,3 +22,9 @@ This repository contains Python solutions to the homeworks for the Data Structur
 * [Week 4 - Paths 2](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/3%20-%20Algorithms%20on%20Graphs/4%20-%20Paths)
 * [Week 5 - Minimum Spanning Trees](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/3%20-%20Algorithms%20on%20Graphs/5%20-%20Minimum%20Spanning%20Trees)
 * [Week 6 - Advanced Shortest Path](https://github.com/IAjimi/Data-Structures-and-Algorithms-Coursera/tree/master/3%20-%20Algorithms%20on%20Graphs/6%20-%20Advanced%20Shortest%20Path)
+
+**4 - Algorithms on Strings**
+* Week 1 - Suffix Trees
+* Week 2 - Burrows-Wheeler Transform
+* Week 3 - Knuth-Morris-Pratt Algorithm
+* Week 4 - Constructing Suffix Arrays and Suffix Trees
