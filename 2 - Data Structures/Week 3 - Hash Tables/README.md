@@ -7,12 +7,12 @@
 
 ---
 
-### Lecture Notes
-Hash tables allow us to search for elements in O(1) time.
+## Hash Tables
+Hash tables allow us to search for elements in `O(1)` time.
 
-##### Hash Function
-For any set of objects S and any integer m > 0, a function h:S -> {0, 1, ..., m-1}
-is called a hash function. m is the cardinality of h.
+### Hash Function
+For any set of objects `S` and any integer `m > 0`, a function `h:S -> {0, 1, ..., m-1}` is called a hash function.
+`m` is the cardinality of `h`.
 
 A good hash function is:
 * deterministic
@@ -20,7 +20,7 @@ A good hash function is:
 * different values for different objects (ideally)
 * direct addressing with O(m) memory (ideally)
 
-Although we want a small cardinality m, it is impossible to have all different values if m < len(S).
+Although we want a small cardinality m, it is impossible to have all different values if `m < len(S)`.
 
 One solution is to use **chaining**:
 * select a hash function h with cardinality m
@@ -32,7 +32,7 @@ Essentially, we store different elements with the same hash value into an array 
 Instead of requiring our hash table to have different values for different objects,
 we can look for a hash table that distribute keys well into different cells.
 
-#### Universal Family
+### Universal Family
 Let U be the universe - the set of all possible keys.
 
 A set of hash functions H is a **universal family** if, for any
@@ -55,7 +55,7 @@ Rehash should be called after *each* operation with the hash table.
 
 Rehashing is an O(n) operation but its amortized running time is O(1) as rehashing is rare (time between rehashes 2x every time).
 
-#### Hashing Integers
+### Hashing Integers
 Take numbers up to length 7 (0 to 9,999,999).
 * Convert phone numbers to integers: 148-25-67 = 1,482,567
 * Choose prime number bigger than 10**7, e.g., p = 10,000,019
@@ -68,7 +68,7 @@ There are p - 1 variants for a and p variants for b -> p(p - 1)
 
 a and b are picked *randomly*.
 
-#### Hashing strings
+### Hashing strings
 Denote by `|S|` the length of string S. The hash value of S is then `h(S) = S[0]*S[1]*...*S[|S| - 1]`.
 
 We need
