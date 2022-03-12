@@ -10,13 +10,13 @@
 > Dijkstra script from Friend Suggestion is fast enough for that problem, however.
 
 ---
-### Lecture Notes
-#### Brief Note
+## Advanced Shortest Path
+### Brief Note
 Some of these notes borrow from [Contraction Hierarchies: An Illustrative Guide](https://jlazarsfeld.github.io/ch.150.project/).
 I would recommend reaching the guide - it is a very clear and approachable explanation of Contraction
 Hierarchies.
 
-#### Refresher: Shortest path
+### Refresher: Shortest path
 * **Input:** a graph G with non-negative edge weights, a source vertex
 s and a target vertex t
 * **Output:** the shortest path between s and t in G
@@ -34,7 +34,7 @@ Bidirectional Djikstra covers two circles of size `pi*r**2`,
 with start and end as origins - i.e., a total area of `2*pi*r**2`, half the
 size of the search from 'regular' Djisktra.
 
-#### Dijkstra Reminder
+### Dijkstra Reminder
 * Initialize dist[s] to 0, all other distances to inf
 * ExtractMin - choose unprocessed u with smallest dist[u]
 * Process u - relax edges outgoing from u
@@ -45,7 +45,7 @@ same set of vertices V and the set of reversed edges `E^R`, s.t.
 for any edge (u, v) belonging to E there is an edge (v, u)
 belonging to `E^R` and vice-versa.
 
-#### Bidirectional Dijsktra: Implementation
+### Bidirectional Dijsktra: Implementation
 * Build `G^R`
 * start Dijkstra from s in G and from t in G^R
 * Alernate between steps in G and G^R
@@ -130,7 +130,7 @@ def ShortestPath(start, dist, prev, proc, end):
 	return (distance, path)
 ```
 
-#### A* Algorithm
+### A* Algorithm
 Take any **potential function** `p(v)` mapping vertices to real numbers.
 It defines new edge weights `l_p(u, v) = l(u, v) - p(u) + p(v)`.
 Replacing l by l_p does not change the shortest paths.
@@ -161,7 +161,7 @@ to t, so search visits only search the edges of shortest s - t paths
 
 The tighter the lower bounds, the better the performance.
 
-#### Bidirectional A*
+### Bidirectional A*
 We need two potential functions, `p_f(v)`, estimating `d(v, t)`, and `p_r(v)`, estimating
 `d(s, v)`.
 
@@ -186,7 +186,7 @@ To find the shortest path from s to t:
 * For each v, compute `p(v) = d_e(v, t)`
 * Launch Dijkstra with potentials `p(v)`
 
-#### Contraction Hierarchies
+### Contraction Hierarchies
 The **Contraction Hierarchies** algorithm uses a process of *node contraction* to create a hierarchy in which every node 
 belongs to a unique level (in other words, an ordering of nodes based on importance).
 
@@ -258,7 +258,7 @@ importance can be changed.
 After contracting the last node we consider the overlay graph G* that contains all original nodes and edges and all 
 shortcut edges added during the contraction process. This is the graph used for our bidirectional Dijkstra searches.
 
-#### Bidirectional Dijkstra w/ upwards edges
+### Bidirectional Dijkstra w/ upwards edges
 This Dijkstra search only considers edges with higher importance.
 
 We run a **complete** Dijkstra search on both of these upward graphs, meaning that **all** nodes in both subgraphs must be settled. 

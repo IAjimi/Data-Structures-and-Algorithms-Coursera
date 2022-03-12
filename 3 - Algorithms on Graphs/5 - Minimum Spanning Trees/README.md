@@ -6,14 +6,13 @@
 
 ---
 
-### Lecture Notes
-#### Minimum Spanning Tree (MST)
+## Minimum Spanning Trees
 * **Input**: a connected, undirected graph G = (V, E) with positive edge
 weights.
 * **Output**: a subset of edges e' subset of E of minimum total weight 
 s.t. the graph (V, e') is connected.
   
-#### Kruskal's algorithm
+### Kruskal's algorithm
 * Every vertex starts in a separate set.
 * Each set is the set of vertices of a connected component.
 * Iteratively add the next lightest edge e that doesn't produce a cycle (i.e., aren't in the same set).
@@ -36,7 +35,7 @@ def kruskal(G):
 Sorting edges is `O(len(edges) * log(len(edges))) = O(len(edges) * log(len(vertices)))` and
 processing edges is also `O(len(edges) * log(len(vertices)))`, so the total running time is `O(len(edges) * log(len(vertices)))`.
 
-#### Prim's algorithm
+### Prim's algorithm
 * Use a priority queue data structure.
 * Pick a random vertex as root of tree, change priority to 0.
 * Process every edge going out from this root, pick one with smallest cost.

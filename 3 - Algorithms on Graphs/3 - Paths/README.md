@@ -6,10 +6,10 @@
 
 ---
 
-### Lecture Notes
-#### Breadth-First Search
+### Paths
+### Breadth-First Search
 Visit nodes from closest to furthest away from a given point. The queue
-strucutre is used to keep layers in order.
+structure is used to keep layers in order.
 
 ```
 def bfs(G, S):
@@ -32,7 +32,7 @@ The running time of breadth-first search is `O(len(edges) + len(vertices))`.
 * Each vertex is enqueued at most once
 * Each edge is examined either once (for directed graphs) or twice (for undirected graphs)
 
-#### Reconstructing Shortest Path
+### Reconstructing Shortest Path
 ```
 def reconstructPath(S, u, prev):
 	result = empty

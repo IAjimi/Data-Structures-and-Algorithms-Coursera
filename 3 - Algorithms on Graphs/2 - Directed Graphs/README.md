@@ -7,8 +7,8 @@
 
 ---
 
-### Lecture Notes
-#### Directed Graphs
+## Graphs
+### Directed Graphs
 A **directed graph** is a graph where each edge has a start and end vertex.
 
 We can still run DFS:
@@ -20,7 +20,7 @@ We could order everything linearly, as long as there isn't a *cycle* in the depe
 A **cycle** in a graph G is a sequence of vertices s.t.
 `(v1, v2), (v2, v3), ..., (vn-1, vn), (vn, v1)` are all edges.
 
-#### Linear Order
+### Linear Order
 Any DAG can be linearly ordered.
 
 Terminology:
@@ -41,7 +41,7 @@ Runtime is `O(len(v)**2)`...
 We retrace the same path every time! We could instead just back up one step - this is just DFS, sorting vertices by 
 reverse post-order.
 
-#### Strongly Connected Components
+### Strongly Connected Components
 A directed graph can be partitioned into **strongly connected components**
 where two vertices if and only if they are in the same component - i.e., once you leave you can't come back.
 

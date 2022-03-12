@@ -7,8 +7,8 @@
 
 ---
 
-### Lecture Notes
-#### Fastest Route
+### Paths
+### Fastest Route
 Observation: any subpath of an optimal path must be optimal.
 
 Edge relaxation: we don't start out with optimal distances stored
@@ -55,7 +55,7 @@ Running time:
 * array: `O(len(v) + len(v)**2 + len(edges)) = O(len(vertices)**2)`
 * binary heap: `O((len(v) + len(edges)) * log(vertices))`
 
-#### Paths in Graphs
+### Paths in Graphs
 * **Input**: currency exchange graph with weighted edges ei
 * **Output**: maximize `r_ei*r_ej` from USD to RUR in the path
 

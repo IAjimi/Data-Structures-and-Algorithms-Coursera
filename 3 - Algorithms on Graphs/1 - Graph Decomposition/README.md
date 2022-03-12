@@ -6,8 +6,8 @@
 
 ---
 
-### Lecture Notes
-#### Formal Definition
+## Graphs
+### Formal Definition
 An (undirected) graph is a collection V of vertices and a collection E of edges
 each of which connects a pair of vertices.
 
@@ -16,7 +16,7 @@ There can be multiple edges between the same vertices.
 
 If a graph has neither, it is called a **simple graph**.
 
-#### Representing Graphs
+### Representing Graphs
 * list of edges: `edges = [(a,b), (a,c), (a,d), (c,d)]`
 * matrix, with entries 1 if there is an edge, 0 if not: `adj_matrix = [[0, 1, 1, 1], [1, 0, 0, 0], [1, 0, 0, 1], [1, 0, 1, 0]]`
 * adjacency list: for each vertex, keep a list of adjacent 
@@ -40,10 +40,10 @@ Different operations are faster in different representations.
 
 For many problems, we want to use the **adjacency list**.
 
-#### Algorithm Runtimes
+### Algorithm Runtimes
 Graph algorithm runtimes depend on len(vertex) and len(edges).
 
-What is faster, O(len(vertex)**3/2) or O(len(edges))?
+What is faster, `O(len(vertex)**3/2)` or `O(len(edges))`?
 It depends on the graph's density!
 
 In **dense** graphs (`len(edges) += len(vertex)**2`), a large fraction of pairs are connected
@@ -52,7 +52,7 @@ by edges.
 
 In **sparse** graphs (`len(edges) += len(vertex)`), each vertex has only a few edges.
 
-#### Exploring Graphs
+### Exploring Graphs
 We want to know what nodes are reachable from a given vertex.
 
 A **path** in a graph G is a sequence of vertices s.t. for all i,
@@ -105,7 +105,7 @@ def explore(v):
 	postvisit(v)
 ```
 
-previsit() and postvisit() can be used alongside a "clock" to keep track of when a node was 1st and last visited.
+`previsit()` and `postvisit()` can be used alongside a "clock" to keep track of when a node was 1st and last visited.
 
 ```
 initialize clock = 1
